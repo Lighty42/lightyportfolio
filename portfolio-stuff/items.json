@@ -1,11 +1,19 @@
 {
   "items": [
     {
-      "title": "ts is wip so no demo projects yet, i will be working on some ts week",
-      "description": "what the meal!!!",
+      "title": "DOORS: Paradox",
+      "description": "Lead Programmer of Paradox, I've programmed the major systems and encounters, including all entity AI and other base systems.",
       "media": [
-        "media/images/lightymcqueen.png"
+        "media/images/paradox.png"
       ]
-      }
+    },
+
+        {
+      "title": "Growth Of Giggle RP",
+      "description": "Lead Programmer of Growth Of Giggle RP's 2025 Halloween Event (Part 2) aswell as The Rewrite.",
+      "media": [
+        "media/images/growth.png"
+      ]
+    }
   ]
 }
