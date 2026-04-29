@@ -1,6 +1,13 @@
 {
   "testimonials": [
     {
+      "person": "Unsurprise",
+      "role": "Lead Growth Of Giggle/RP",
+      "score": 10,
+      "message": "He clutched up my game's update a day before release and did it flawlessly, wouldn't have been as good of a release if wasn't for him."
+    },
+
+    {
       "person": "basil",
       "role": "Lead of Rooms: REVISITED",
       "score": 10,
