@@ -1,22 +1,11 @@
 {
   "testimonials": [
     {
-      "person": "Fancy Ducc",
-      "role": "mmm, I want to eat this meal",
+      "person": "Andre",
+      "role": "Customer",
       "score": 10,
-      "message": "get out of my house, who are you, im calling the cops, oh wait you made paradox, ok you can stay"
-    },
-    {
-      "person": "JackTheGen",
-      "role": "jack the generator",
-      "score": -1,
-      "message": "what the fuck, this looks like shit, you overcharged me what the hell is this"
-    },
-    {
-      "person": "fortnite",
-      "role": "yes i am fortnite",
-      "score": 5,
-      "message": "fortnite"
+      "message": "you told me once to do something with an array so your goat"
     }
+
   ]
 }
