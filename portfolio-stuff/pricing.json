@@ -4,17 +4,17 @@
     {
       "type": "Basic Systems",
       "price": "2,000R$+",
-      "description": "Small meal, to tide you over"
+      "description": "Example: Prompt System, Dialogue Interaction"
     },
     {
       "type": "Complex Systems",
       "price": "7,000R$+",
-      "description": "Good meal, satisfying of hunger"
+      "description": "Example: Dungeon Generation, Chunk Generation, Camera System"
     },
     {
       "type": "Large Systems",
       "price": "10,000R$+",
-      "description": "Oh my, this meal is quite surreal, it seems to be ideal"
+      "description": "Example: RPG Turn Based Battle System"
     }
   ]
 }
