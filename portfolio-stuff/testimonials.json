@@ -2,7 +2,7 @@
   "testimonials": [
     {
       "person": "Unsurprise",
-      "role": "Lead Growth Of Giggle/RP",
+      "role": "Lead of Growth Of Giggle/RP",
       "score": 10,
       "message": "He fixed a lot of major bugs in our game, and it was all a success. He also made the coding so much easier to edit. He’s really awesome at making AI, and I wouldn’t even have a proper boss fight minigame if he didn’t step up."
     },
@@ -15,10 +15,10 @@
     },
 
     {
-      "person": "Andre",
-      "role": "Customer",
-      "score": 10,
-      "message": "you told me once to do something with an array so your goat"
+      "person": "Slyifern",
+      "role": "Lead Developer of The Foundation",
+      "score": 8,
+      "message": "lightwin helped alot with bug fixing and additiong additional features and qol to existing systems in da game"
     }
 
   ]

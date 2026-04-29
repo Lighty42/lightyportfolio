@@ -14,6 +14,14 @@
       "media": [
         "media/images/growth.png"
       ]
+    },
+
+    {
+      "title": "The Foundation",
+      "description": "Contributed many bug fixes and tiny features, with additional work in the up and coming Rewrite update.",
+      "media": [
+        "media/images/foundation.png"
+      ]
     }
   ]
 }
