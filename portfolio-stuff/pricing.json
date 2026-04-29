@@ -1,0 +1,20 @@
+{
+  "note": "Prices are not final! Prices can change due to complexity, deadline, etc.",
+  "items": [
+    {
+      "type": "Basic Systems",
+      "price": "2,000R$+",
+      "description": "Small meal, to tide you over"
+    },
+    {
+      "type": "Complex Systems",
+      "price": "7,000R$+",
+      "description": "Good meal, satisfying of hunger"
+    },
+    {
+      "type": "Large Systems",
+      "price": "10,000R$+",
+      "description": "Oh my, this meal is quite surreal, it seems to be ideal"
+    }
+  ]
+}
