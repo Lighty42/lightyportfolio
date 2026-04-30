@@ -143,12 +143,58 @@ video {
   font-size: clamp(2rem, 4vw, 3.6rem);
 }
 
-.work-grid,
 .pricing-grid,
-.testimonial-grid {
+.wheel-track {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 20px;
+}
+
+.pricing-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.horizontal-wheel {
+  position: relative;
+}
+
+.wheel-track {
+  grid-template-columns: repeat(var(--visible-items, 3), minmax(0, 1fr));
+  align-items: stretch;
+}
+
+.wheel-arrow {
+  position: absolute;
+  top: 50%;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 76px;
+  padding: 0;
+  cursor: pointer;
+  background: rgba(5, 6, 19, 0.78);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transform: translateY(-50%);
+}
+
+.wheel-arrow:hover {
+  transform: translateY(-50%) scale(1.08);
+}
+
+.wheel-arrow-left {
+  left: -24px;
+}
+
+.wheel-arrow-right {
+  right: -24px;
+}
+
+.wheel-arrow img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  pointer-events: none;
 }
 
 .work-card,
@@ -174,6 +220,7 @@ video {
 .work-card {
   display: flex;
   flex-direction: column;
+  align-self: stretch;
 }
 
 .media-gallery {
@@ -231,6 +278,7 @@ video {
   color: var(--text);
   font-size: 1.18rem;
   line-height: 1.25;
+  overflow-wrap: anywhere;
 }
 
 .project-description,
@@ -238,12 +286,14 @@ video {
 .testimonial-message {
   margin: 12px 0 0;
   color: var(--muted);
+  overflow-wrap: anywhere;
 }
 
 .price-card {
   display: flex;
   flex-direction: column;
   min-height: 100%;
+  align-self: stretch;
 }
 
 .price-value {
@@ -265,18 +315,23 @@ video {
 .testimonial-card {
   display: grid;
   gap: 18px;
+  align-content: start;
+  align-self: stretch;
 }
 
 .testimonial-head {
+  position: relative;
   display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 14px;
+  grid-template-columns: minmax(0, 1fr);
   align-items: start;
+  height: 48px;
+  padding-right: 78px;
 }
 
 .person-line {
   display: grid;
   gap: 2px;
+  min-width: 0;
 }
 
 .person-line p {
@@ -286,10 +341,15 @@ video {
 }
 
 .score-chip {
+  position: absolute;
+  top: 0;
+  right: 0;
   min-width: 62px;
   padding: 7px 9px;
   color: var(--text);
   text-align: center;
+  white-space: nowrap;
+  align-self: start;
   background: rgba(102, 88, 242, 0.16);
   border: 1px solid rgba(127, 114, 255, 0.34);
   border-radius: var(--radius);
@@ -346,9 +406,7 @@ video {
 }
 
 @media (max-width: 980px) {
-  .work-grid,
-  .pricing-grid,
-  .testimonial-grid {
+  .pricing-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
@@ -362,10 +420,26 @@ video {
     padding-top: 42px;
   }
 
-  .work-grid,
   .pricing-grid,
-  .testimonial-grid {
+  .horizontal-wheel.has-arrows .wheel-track {
     grid-template-columns: 1fr;
+  }
+
+  .horizontal-wheel.has-arrows .wheel-track > :nth-child(n + 2) {
+    display: none;
+  }
+
+  .wheel-arrow {
+    width: 40px;
+    height: 62px;
+  }
+
+  .wheel-arrow-left {
+    left: -12px;
+  }
+
+  .wheel-arrow-right {
+    right: -12px;
   }
 
   .footer-inner {

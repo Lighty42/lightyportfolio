@@ -100,30 +100,43 @@ const renderPriceText = (item) => {
   return body;
 };
 
+const createWorkCard = (item, visibleNow = false) => {
+  const card = el("article", `work-card reveal${visibleNow ? " is-visible" : ""}`);
+  const media = renderMedia(item.media, item.title);
+  const text = renderWorkText(item);
+
+  if (!media && !text) return null;
+
+  if (media) card.append(media);
+  if (text) card.append(text);
+
+  return card;
+};
+
+const createTestimonialCard = (item, visibleNow = false) => {
+  const card = el("article", `testimonial-card reveal${visibleNow ? " is-visible" : ""}`);
+  const head = el("div", "testimonial-head");
+  const person = el("div", "person-line");
+
+  addText(person, "h3", "", item.person);
+  addText(person, "p", "", item.role);
+
+  head.append(person, el("span", "score-chip", `${item.score}/10`));
+  card.append(head);
+
+  addText(card, "p", "testimonial-message", item.message);
+
+  return card;
+};
+
 const renderWork = ({ items = [] }) => {
-  roots.work.replaceChildren();
-
-  if (!items.length) {
-    roots.work.append(el("div", "empty-state", "son, add portfolio items"));
-    return;
-  }
-
-  const grid = el("div", "work-grid");
-
-  items.forEach((item) => {
-    const card = el("article", "work-card reveal");
-    const media = renderMedia(item.media, item.title);
-    const text = renderWorkText(item);
-
-    if (!media && !text) return;
-
-    if (media) card.append(media);
-    if (text) card.append(text);
-
-    grid.append(card);
+  window.renderWheel({
+    root: roots.work,
+    items,
+    cardBuilder: createWorkCard,
+    emptyText: "son, add portfolio items",
+    el,
   });
-
-  roots.work.append(grid.children.length ? grid : el("div", "empty-state", "idk how you got past the first check but ADD PORTFOLIO ITEMS YOU CHUD"));
 };
 
 const renderPricing = ({ items = [], note = "" }) => {
@@ -155,27 +168,12 @@ const renderPricing = ({ items = [], note = "" }) => {
 };
 
 const renderTestimonials = ({ testimonials = [] }) => {
-  roots.testimonials.replaceChildren();
-
-  if (!testimonials.length) {
-    roots.testimonials.append(el("div", "empty-state", "add testimonials, fat noob, imagine being so noob bro"));
-    return;
-  }
-
-  testimonials.forEach((item) => {
-    const card = el("article", "testimonial-card reveal");
-    const head = el("div", "testimonial-head");
-    const person = el("div", "person-line");
-
-    addText(person, "h3", "", item.person);
-    addText(person, "p", "", item.role);
-
-    head.append(person, el("span", "score-chip", `${item.score}/10`));
-    card.append(head);
-
-    addText(card, "p", "testimonial-message", item.message);
-    
-    roots.testimonials.append(card);
+  window.renderWheel({
+    root: roots.testimonials,
+    items: testimonials,
+    cardBuilder: createTestimonialCard,
+    emptyText: "add testimonials, fat noob, imagine being so noob bro",
+    el,
   });
 };
 
